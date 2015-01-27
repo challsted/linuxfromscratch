@@ -1,0 +1,4 @@
+Step 1, download source code useing wgetlist from http://www.linuxfromscratch.org/lfs/view/development/wget-list
+    a) wget -i wgetlist
+        i) comes out to 81 packages+patches in 324mb of source code with current wget list
+Step 2, start following guide found here: http://www.linuxfromscratch.org/lfs/view/development/

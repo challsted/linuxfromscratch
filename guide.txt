@@ -1,4 +1,11 @@
 Step 1, download source code useing wgetlist from http://www.linuxfromscratch.org/lfs/view/development/wget-list
-    a) wget -i wgetlist
+    a) I then downloaded all of the packages with "wget -i wgetlist"
         i) comes out to 81 packages+patches in 324mb of source code with current wget list
+    b) I also downloaded md5 list from here:
+        i) http://www.linuxfromscratch.org/lfs/view/development/md5sums
+       I saved these md5 values into a file called "md5sums" then i cd'd into my sources directory that i downloaded all of the files into and ran "md5sum -c md5sums". I personally had 1 file that printed "failed" for some reason the wget list link seems to point to a bad package, so on the page where it lists "all packages" (http://www.linuxfromscratch.org/lfs/view/development/chapter03/packages.html) i simply downloaded it directly then checked the md5sum of just the 1 package and it checked out, i list this because it may happen to you also
 Step 2, start following guide found here: http://www.linuxfromscratch.org/lfs/view/development/
+    a) i had to update 1 of my system wide symlinks (point sh to bash)
+        i) to do this, simply i simply ran "cd /bin" then "ln -sf /usr/bin/bash sh"
+            A) to find these i had to run "which sh" which returned "/bin/sh", when i ran "ls -l /bin/sh" i seen it was a logical link to "/bin/dash" (i need to remember this so i can change it back!) then i ran "which bash" which returned "/usr/bin/bash" then i simply did a soft link and forced it to overwrite the existing link. It is very important that i remember this and run "ln -sf /bin/dash sh" once i have build the "temporary" enviroment or my system (Ubuntu 14.04) will be impacted on boottime. 
+
